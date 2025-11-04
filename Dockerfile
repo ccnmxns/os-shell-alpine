@@ -12,7 +12,7 @@ ENV HOME="/" \
 RUN apk add --no-cache bash yq-go wait4x unzip curl
 COPY --from=handlebars-base /usr/local/bin/handlebarsc /usr/local/bin/handlebarsc
 RUN INITOOL=initool-v1.0.0-9dc7574-linux-x86_64.zip ; \
-    curl -SsLf https://github.com/dbohdan/initool/releases/download/v1.0.0/{INITOOL} -O ; \
+    curl -SsLf https://github.com/dbohdan/initool/releases/download/v1.0.0/${INITOOL} -O ; \
     unzip ${INITOOL} ; mv initool /usr/local/bin/initool ; rm ${INITOOL}
 
 RUN SCUTTLE_VERSION=v1.1.11 ; \
